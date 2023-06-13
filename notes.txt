@@ -1,0 +1,23 @@
+Oracle Problem:
+cant read or listen data from real world
+
+Oracle: any device that interacts with offchain worldto provide external data or computaion to smart contracts
+
+Hybrid Smart Contracts: decentralized network + decentralized Oracle, have some offchain component
+
+Chainlink, decent oracle networks
+
+Concept          ||      Access      || pub or pvt
+mnemonic         ||  All accounts    || pvt
+pvt key          ||  1 account       || pvt
+public address   ||  none            || public
+
+
+struct (new)
+usage:     People public person = People({favoriteNumber:2, name:"Jane"});
+
+    struct People{
+        uint256 favoriteNumber;
+        string name;
+    }
+note: fav gets indexed to 0 and name to 1,wheneevr obj like this, automatically indexed
