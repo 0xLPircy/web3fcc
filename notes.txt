@@ -21,3 +21,6 @@ usage:     People public person = People({favoriteNumber:2, name:"Jane"});
         string name;
     }
 note: fav gets indexed to 0 and name to 1,wheneevr obj like this, automatically indexed
+
+red error not compiled
+yellow warning compiled
