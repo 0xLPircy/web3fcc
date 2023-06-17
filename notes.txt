@@ -30,3 +30,6 @@ memory temp modifiable
 storage perm modifiable
 
 choose test net and then go to chain.link to get test eth for the test net, then change iin the remix to inject and connect and deploy
+
+
+side note: metamasl can be connected through rainbow wallet
