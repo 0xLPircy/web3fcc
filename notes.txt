@@ -34,9 +34,3 @@ choose test net and then go to chain.link to get test eth for the test net, then
 
 side note: metamasl can be connected through rainbow wallet
 no resource for metamask to next
-
-19/6/23
-20/19/23
-21/6/23
-23/6/23
-24 25 26 27 28
