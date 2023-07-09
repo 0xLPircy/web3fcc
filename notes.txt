@@ -38,3 +38,7 @@ no resource for metamask to next
 Overriding functions 
 when inherit in another contract and want function with same name to override parent contract ka functiin
 1.virtual overriding: add "virtual" to parent function and override to child function
+
+payable function fund
+"// set minimum fund amount in usd
+        require(msg.value > 1e18, "didnt send enough");"
