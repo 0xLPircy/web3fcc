@@ -34,3 +34,7 @@ choose test net and then go to chain.link to get test eth for the test net, then
 
 side note: metamasl can be connected through rainbow wallet
 no resource for metamask to next
+
+Overriding functions 
+when inherit in another contract and want function with same name to override parent contract ka functiin
+1.virtual overriding: add "virtual" to parent function and override to child function
