@@ -42,3 +42,28 @@ when inherit in another contract and want function with same name to override pa
 payable function fund
 "// set minimum fund amount in usd
         require(msg.value > 1e18, "didnt send enough");"
+
+reverting 
+unda an action
+
+// blockchains have no idea whats outside the chain, cant access api etc blah blah
+called the ORACLE PROBLEM/ SMART CONTRACT CONNECTIVITY PROBLEM
+
+Blockchain Oracle: an device interactiong with off chain world to get data
+cant have 1 central oracle cause not decentralized
+
+Chainlink, modular decentralized oracle network, can be customised
+
+blockchain nodes cant make https or api calls
+
+Chainlink Features:
+    Chainlink data feeds: 
+        chainlink nodes get data from diff exchanges and data providers
+        get that data through network of decentral chainlink nodes
+        nodes use meduim to figure out actual price of asset
+        then deliver to reference/ pricefeed/ data contract on chain that other smart contracts can use
+        then the smart contracts use that info to power thier defi app
+    Chainlink VRF: (verifiable randomness function)
+    Chainlink Keepers:
+        decentralized event driven execution
+        listen for event then execute
