@@ -67,3 +67,5 @@ Chainlink Features:
     Chainlink Keepers:
         decentralized event driven execution
         listen for event then execute
+
+Interface is a skeleton of the contract, gives info on fuction but not the body
