@@ -33,12 +33,17 @@ contract FundMe {
         // set minimum fund amount in usd
         require(msg.value >= 1e18, "didnt send enough"); //1e18 == 10^18 == 1000000000000000000
         // msg.value is how much they sent with the function in terms of etherium
+        // 18 decimal cause wei
     }
 
-    function getPrice() public {
+    function getPrice() public view returns(uint256) {
         // interactimg with a contract outside our project so we need
         // ABI 
         // Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        (, int price, , ,) = priceFeed.latestRoundData();
+        //eth in terms of usd gwei format, has 8 decimal places
+        return uint256(price * 1e10); //1**10
     }
 
     function getVersion () public view returns(uint256) {
@@ -46,7 +51,11 @@ contract FundMe {
         return priceFeed.version();
     }
 
-    function getConversionRate() public {}
+    function getConversionRate(uint256 ethAmount) public view returns(uint256){
+        uint256 ethPrice = getPrice();
+        uint256 ethAmountInUsd = (ethPrice *ethAmount) / 1e18;
+        return ethAmountInUsd;
+    }
 
     // function withdraw(){}
 }
