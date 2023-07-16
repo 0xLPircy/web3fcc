@@ -68,9 +68,10 @@ Chainlink Features:
         decentralized event driven execution
         listen for event then execute
 
+4.3
 Interface is a skeleton of the contract, gives info on fuction but not the body
 
-
+4.5
 DECIMALS WITH MONEY
 msg.value : 
     in terms of WEI
@@ -79,3 +80,15 @@ msg.value :
 AggregatorV3 latestRoundData:
     8 decimals needed to be usd
     price / 10^8 = usd
+
+
+4.7
+LIBRARIES
+    - Cant have state variables, cant send ether
+    - all functions internal
+    - library LibName{}
+    - ` import "./LibName.sol"; `
+    - inside contract ` using LibName for uint256; `
+    - variable.LibFuncName();
+ 
+ 
