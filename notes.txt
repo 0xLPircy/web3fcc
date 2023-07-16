@@ -69,3 +69,13 @@ Chainlink Features:
         listen for event then execute
 
 Interface is a skeleton of the contract, gives info on fuction but not the body
+
+
+DECIMALS WITH MONEY
+msg.value : 
+    in terms of WEI
+    18 decimals needed to be ether
+    msg.value / 10^18 = ether
+AggregatorV3 latestRoundData:
+    8 decimals needed to be usd
+    price / 10^8 = usd
