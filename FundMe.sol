@@ -35,6 +35,9 @@ contract FundMe {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
         }
+        // reset the array
+        funders = new address[](0);
+        // blank new array with 0 objects
     }
 
     // function getPrice() public view returns(uint256) {

@@ -98,4 +98,11 @@ SAFEMATH
     -unchecked is used when old way ki tarah act karwana chahate hai
     -unchecked is better for gas price so if youre sure of no over/underflows so use unchecked
  
- 
+ 4.9
+LOOPS
+    -same
+
+4.10
+RESET AN array
+    -just redeclare
+    -arrName = new uint[](0);
