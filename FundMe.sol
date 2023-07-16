@@ -29,6 +29,14 @@ contract FundMe {
         addressToAmountFunded[msg.sender]= msg.value;
     }
 
+    function withdraw() public {
+        // for loop
+        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++){
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
+    }
+
     // function getPrice() public view returns(uint256) {
     //     // interactimg with a contract outside our project so we need
     //     // ABI 
@@ -54,6 +62,4 @@ contract FundMe {
     //     //  div by 1e18 to not have 36 zeros after multiplication
     //     return ethAmountInUsd;
     // }
-
-    // function withdraw(){}
 }
