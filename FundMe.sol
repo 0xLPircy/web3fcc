@@ -28,6 +28,10 @@ contract FundMe {
     uint256 public number;
     uint256 public minimumUsd = 50 * 1e18;
     // use oracle network to find etherium in terms of usd vice versa
+
+    address[] public funders;
+    mapping(address => uint256) public addressToAmountFunded;
+
     function fund() public payable {
         
         // set minimum fund amount in usd
@@ -35,6 +39,8 @@ contract FundMe {
         // msg.value is how much they sent with the function in terms of etherium
         // msg.value is 18 decimal places cause wei
         // so gives 1000000000000000000 wei meaning 1 ether
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender]= msg.value;
     }
 
     function getPrice() public view returns(uint256) {
