@@ -90,5 +90,12 @@ LIBRARIES
     - ` import "./LibName.sol"; `
     - inside contract ` using LibName for uint256; `
     - variable.LibFuncName();
+
+4.8
+SAFEMATH
+    -need for version 0.7.6 and below
+    -after sol mai hi aagya
+    -unchecked is used when old way ki tarah act karwana chahate hai
+    -unchecked is better for gas price so if youre sure of no over/underflows so use unchecked
  
  
