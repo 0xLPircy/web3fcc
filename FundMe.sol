@@ -8,7 +8,6 @@ pragma solidity ^0.8.8;
 // import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
 
-
 contract FundMe {
     using PriceConverter for uint256;
 
@@ -18,20 +17,34 @@ contract FundMe {
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
+    // setting up owner of contract
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
     function fund() public payable {
-        
         // set minimum fund amount in usd
-        require(msg.value.getConversionRate() >= minimumUsd, "didnt send enough"); //1e18 == 10^18 == 1000000000000000000
+        require(
+            msg.value.getConversionRate() >= minimumUsd,
+            "didnt send enough"
+        ); //1e18 == 10^18 == 1000000000000000000
         // msg.value is how much they sent with the function in terms of etherium
         // msg.value is 18 decimal places cause wei
         // so gives 1000000000000000000 wei meaning 1 ether
+
         funders.push(msg.sender);
-        addressToAmountFunded[msg.sender]= msg.value;
+        addressToAmountFunded[msg.sender] = msg.value;
     }
 
     function withdraw() public {
         // for loop
-        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++){
+        for (
+            uint256 funderIndex = 0;
+            funderIndex < funders.length;
+            funderIndex++
+        ) {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
         }
@@ -40,43 +53,19 @@ contract FundMe {
         funders = new address[](0);
         // blank new array with 0 objects
 
-        // Transfer
-        payable(msg.sender).transfer(address(this).balance);
-        // msg.sender -> address
-        // payable(msg.sender) -> payable address
+        // // Transfer
+        // payable(msg.sender).transfer(address(this).balance);
+        // // msg.sender -> address
+        // // payable(msg.sender) -> payable address
 
-        // Send
-        bool sendSuccess = payable(msg.sender).send(address(this).balance);
-        require(sendSuccess, "Send Failed");
+        // // Send
+        // bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        // require(sendSuccess, "Send Failed");
 
         // Call
-        (bool callSuccess, ) = payable(msg.sender).call{value : address(this).balance}("");
+        (bool callSuccess, ) = payable(msg.sender).call{
+            value: address(this).balance
+        }("");
         require(callSuccess, "Call Failed");
     }
-
-    // function getPrice() public view returns(uint256) {
-    //     // interactimg with a contract outside our project so we need
-    //     // ABI 
-    //     // Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
-    //     AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-    //     (, int price, , ,) = priceFeed.latestRoundData();
-    //     //eth in terms of usd, has 8 decimal places
-    //     // so if returns 300000000000 means 3000.00000000
-    //     return uint256(price * 1e10); //1^10
-    //     // so now itll be 8+10 18 just as msg.value is
-    //     // msg.value is uint and price int so typecastong done
-    // }
-
-    // function getVersion () public view returns(uint256) {
-    //     AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-    //     return priceFeed.version();
-    // }
-
-    // function getConversionRate(uint256 ethAmount) public view returns(uint256){
-    //     uint256 ethPrice = getPrice();
-    //     // eath amount also has 18 extra zeros
-    //     uint256 ethAmountInUsd = (ethPrice *ethAmount) / 1e18;
-    //     //  div by 1e18 to not have 36 zeros after multiplication
-    //     return ethAmountInUsd;
-    // }
 }

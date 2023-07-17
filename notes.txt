@@ -120,3 +120,7 @@ SENDING ETH FROM CONTRACT
               require(callSuccess, "Call Failed");
             `
     - if call, returns 2 params, bool and bytes onject that is arrays, bytes gives data since we can call any func from "call"
+
+4.12
+CONSTRUCTOR
+    - gets called immediety as contract is created
