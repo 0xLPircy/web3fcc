@@ -106,3 +106,17 @@ LOOPS
 RESET AN array
     -just redeclare
     -arrName = new uint[](0);
+
+4.11
+SENDING ETH FROM CONTRACT
+    - 3 ways, transfer (max 2300 gas), send (max 2300 gas), call (all gas)
+    - Transfer: ` payable(msg.sender).transfer(address(this).balance); `
+    - if transfer fails, throws error, automatically reverts
+    - Send: ` bool sendSuccess = payable(msg.sender).send(address(this).balance);
+              require(sendSuccess, "Send Failed");
+            `
+    - if send fails, returns bool, reverts with the require statement
+    - Call: ` (bool callSuccess, bytes memory dataReturned) = payable(msg.sender).call{value : address(this).balance}("")
+              require(callSuccess, "Call Failed");
+            `
+    - if call, returns 2 params, bool and bytes onject that is arrays, bytes gives data since we can call any func from "call"

@@ -35,9 +35,23 @@ contract FundMe {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
         }
+
         // reset the array
         funders = new address[](0);
         // blank new array with 0 objects
+
+        // Transfer
+        payable(msg.sender).transfer(address(this).balance);
+        // msg.sender -> address
+        // payable(msg.sender) -> payable address
+
+        // Send
+        bool sendSuccess = payable(msg.sender).send(address(this).balance);
+        require(sendSuccess, "Send Failed");
+
+        // Call
+        (bool callSuccess, ) = payable(msg.sender).call{value : address(this).balance}("");
+        require(callSuccess, "Call Failed");
     }
 
     // function getPrice() public view returns(uint256) {
