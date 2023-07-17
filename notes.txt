@@ -124,3 +124,7 @@ SENDING ETH FROM CONTRACT
 4.12
 CONSTRUCTOR
     - gets called immediety as contract is created
+
+4.13
+MODIFIER
+    - do whats in modifier then do rest where _; is
