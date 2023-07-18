@@ -3,7 +3,7 @@
 // set minimum fund walue
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.8;
+pragma solidity ^0.8.0;
 
 // import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "./PriceConverter.sol";
@@ -11,17 +11,19 @@ import "./PriceConverter.sol";
 contract FundMe {
     using PriceConverter for uint256;
 
-    uint256 public minimumUsd = 50 * 1e18;
-    // use oracle network to find etherium in terms of usd vice versa
+    uint256 public constant minimumUsd = 50 * 1e18; // use oracle network to find etherium in terms of usd vice versa
+    //  constant: 841,980 -> 822,426
+    // calling: 2407 -> 307
 
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
     // setting up owner of contract
-    address public owner;
+    address public immutable i_owner;
 
+    // 822426 -> 798955
     constructor() {
-        owner = msg.sender;
+        i_owner = msg.sender;
     }
 
     function fund() public payable {
@@ -33,7 +35,6 @@ contract FundMe {
         // msg.value is how much they sent with the function in terms of etherium
         // msg.value is 18 decimal places cause wei
         // so gives 1000000000000000000 wei meaning 1 ether
-
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
     }
@@ -70,7 +71,7 @@ contract FundMe {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "Sender is not owner");
+        require(msg.sender == i_owner, "Sender is not owner");
         _;
     }
 }

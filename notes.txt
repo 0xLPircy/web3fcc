@@ -131,3 +131,20 @@ MODIFIER
 
 4.14
 TESTNET Demoing
+    - used sepolia
+    - can add and then connect new account
+
+4.15
+ADVANCED SOLIDITY CONCEPTS
+---
+
+4.16
+IMMUTIBILITY AND CONSTANT
+    - one time set constants can be efficiented to save gas
+    - Constant : makes the var a Constant
+                    uint256 public constant VAR_NAME = 50;
+                    constants have all caps w/t _ naming convention
+    - Immutable : makes var contant but when set different than declare
+                    uint public immutable i_varName;
+                    i_varName = 30;
+                    i_ naminv convention
