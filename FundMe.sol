@@ -35,7 +35,7 @@ contract FundMe {
         // so gives 1000000000000000000 wei meaning 1 ether
 
         funders.push(msg.sender);
-        addressToAmountFunded[msg.sender] = msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
     }
 
     function withdraw() public onlyOwner {
