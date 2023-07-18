@@ -142,9 +142,16 @@ ADVANCED SOLIDITY CONCEPTS
 IMMUTIBILITY AND CONSTANT
     - one time set constants can be efficiented to save gas
     - Constant : makes the var a Constant
-                    uint256 public constant VAR_NAME = 50;
-                    constants have all caps w/t _ naming convention
+                    ` uint256 public constant VAR_NAME = 50; `
+                    ` constants have all caps w/t _ naming convention `
     - Immutable : makes var contant but when set different than declare
                     uint public immutable i_varName;
-                    i_varName = 30;
-                    i_ naminv convention
+                    ` i_varName = 30; `
+                    ` i_ naminv convention `
+
+4.17
+CUSTOM ERRORS
+    - create a custom error instead of using require
+    - the output string uses alot of gas since each letter stored individually
+    - ` error ErrName(); `
+    - ` if(b==0) { revert ErrName();} `
