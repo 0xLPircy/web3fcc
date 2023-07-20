@@ -155,3 +155,13 @@ CUSTOM ERRORS
     - the output string uses alot of gas since each letter stored individually
     - ` error ErrName(); `
     - ` if(b==0) { revert ErrName();} `
+
+4.18
+RECIEVE and FALLBACKS
+    - if someone sends eth without calling fund function
+    - Recieve: pre existing special function that is called when eth is sent
+        contract can have at most one, must have external and payable,
+        cant return anything, n0 fiunction keyword
+    - FallBack: 
+        contract can have at most one, must have external payable or (bytes calldata input) external [payable] returns byte memory
+        can be virtual, have modifiers
