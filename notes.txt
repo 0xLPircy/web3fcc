@@ -165,3 +165,18 @@ RECIEVE and FALLBACKS
     - FallBack: 
         contract can have at most one, must have external payable or (bytes calldata input) external [payable] returns byte memory
         can be virtual, have modifiers
+
+5.09
+COMPILING OUR SOLIDITY
+    - we use a js function (example here deploy.js)
+    - tool solc-js
+    - to set up
+        ` yarn add solc `
+        ` yarn add solc@0.8.7-fixed `
+        ` yarn global add solc@0.8.7-fixed `
+    - to compile
+        ` yarn solcjs --bin --abi --include-path node-modules/ --base-path . -o . SimpleStorage.sol `
+        --bin binary
+        --abi abi
+        --base-path .  means base path is current folder
+        -o .  means we will output the current binary and abi to this folder
