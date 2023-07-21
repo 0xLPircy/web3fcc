@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "ethers": "^6.6.4",
     "solc": "^0.8.7-fixed"
   },
   "scripts": {
