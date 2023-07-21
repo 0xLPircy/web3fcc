@@ -180,3 +180,8 @@ COMPILING OUR SOLIDITY
         --abi abi
         --base-path .  means base path is current folder
         -o .  means we will output the current binary and abi to this folder
+
+5.10
+GANACHE and NETWORKS
+    -rps : pemote procedure call
+        connects us to make api calls and interact with blockchain node
