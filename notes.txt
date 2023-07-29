@@ -189,7 +189,12 @@ GANACHE and NETWORKS
 5.11
 INTRODUCTION TO ETHERS.JS
     - contract factory is something used to deploy contracts
-
+    - what we did to deploy:
+        gnache local blockchain
+        used the rpc server id to connect using ethers and JsonRpcProvider
+        added the pvt key of the wallet that will be deploying
+        added abi and binay file of the contract to be deployed
+        contract factoried it with abi binary and wallet params
 
 5.12
 AWAIT keyword
