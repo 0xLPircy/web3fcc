@@ -199,3 +199,9 @@ INTRODUCTION TO ETHERS.JS
 5.12
 AWAIT keyword
     - inside async function to wait for a promise to finish
+
+5.13
+ADDING TRANSACTION OVERRIDES
+    - can add paras to deploy function to override stuff 
+    - example: gasPrice:1000000000, gasLimit etc
+    -   const contract = await contractFactory.deploy({ gasPrice:100000000});
