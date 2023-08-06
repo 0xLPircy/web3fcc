@@ -205,3 +205,12 @@ ADDING TRANSACTION OVERRIDES
     - can add paras to deploy function to override stuff 
     - example: gasPrice:1000000000, gasLimit etc
     -   const contract = await contractFactory.deploy({ gasPrice:100000000});
+
+5.14
+TRANSACTION RECEIPTS
+    - can wait a certain number of blocks to make sure it gets attachec with the chain
+    - were essentially waiting for number of confirmations ie blocks
+    - const deploymentReceipt = await contract.deployTransaction.wait(2); //2 blocks
+    - so it gives all info on the contract 
+    - transactionReceipt vs deployTransaction
+    - after block, just contract before block
