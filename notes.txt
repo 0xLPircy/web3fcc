@@ -253,3 +253,5 @@ ITERACTING WITH CONTRACTS IN ETHERJS
     - BigNumber Lib
         used cause sol and js have issues with decimals
         if BigNumber output can add var.toString(); at end to convert to string
+    - for view funtion no gas cost so its not a transaction we dont need to wait for a block to approve so trans reciept isnt used
+    - for updation function gas costs so we need a block to accept it before we move forward
