@@ -237,3 +237,19 @@ SENDING A RAW TRANSACTION IN ETHERSJS
     - we can call transaction count to always get correct nonce
         ` const nonce = await wallet.getTransactionCount(); `
     - data we sent was binary of creating a trasaction normally if were calling a functionetc uska alag data jayega
+
+5.16
+ITERACTING WITH CONTRACTS IN ETHERJS
+    - ABI: application bionary interface, kinda like json of the smart contract
+    - STEPS:
+        * "HTTP://127.0.0.1:7545" //get the chain
+        * get wallet
+        * get abi in a var
+        * get bin in a var
+        * Create contract factory object using abi and bin and connecting to the wallet
+        * deploy the contract
+        * wait for deployed contract to confirm and come on a block
+        * do whatever functions necesarry
+    - BigNumber Lib
+        used cause sol and js have issues with decimals
+        if BigNumber output can add var.toString(); at end to convert to string
