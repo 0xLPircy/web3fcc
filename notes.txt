@@ -255,3 +255,12 @@ ITERACTING WITH CONTRACTS IN ETHERJS
         if BigNumber output can add var.toString(); at end to convert to string
     - for view funtion no gas cost so its not a transaction we dont need to wait for a block to approve so trans reciept isnt used
     - for updation function gas costs so we need a block to accept it before we move forward
+
+5.17
+ENVIRONMENT VARS
+    - Terminal
+        ` echo $varName ` //gives env var value
+        ` export varName = value ` //sets env var
+    - .env file
+        VAR_NAME = xyzvalue //declare
+        process.env.VAR_NAME //call

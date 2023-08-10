@@ -1,14 +1,15 @@
 const ethers = require("ethers");
 const fs = require("fs");
+require("dotenv").config();
 
 async function main() {
   // CONNECTING SCRIPT TO LOCAL BLOCKCHAIN
   // http://127.0.0.1:7545
   const provider = new ethers.providers.JsonRpcProvider(
-    "HTTP://127.0.0.1:7545" //get the chain
+    process.env.RPC_URL //get the chain
   );
   const wallet = new ethers.Wallet(
-    "0x7ac49dcc3a7235e61de7dfc15b5f4e74a778d927e73dd2b249682f112d56121c", //get the wallet
+    process.env.PRIVATE_KEY, //get the wallet
     provider
   );
   const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8"); //get abi
