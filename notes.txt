@@ -286,3 +286,10 @@ ENVIRONMENT VARS
         make sure to declare PRIVATE_KEY_PASSWORD in terminal
             PRIVATE_KEY_PASSWORD-password deploy node.js
     - ` history ` kets you see terminal history
+
+5.18
+CUSTOM PRETTIER
+    - yard add prettier-plugin-solidity
+    - .prettierrc file created with custom shiz
+    - this takes precedent over other files
+    - other: cmd shift v for priview mode of .md files
