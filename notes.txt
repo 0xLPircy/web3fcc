@@ -264,3 +264,25 @@ ENVIRONMENT VARS
     - .env file
         VAR_NAME = xyzvalue //declare
         process.env.VAR_NAME //call
+    - Encrypt the pvt key before .env file for further protection
+        new file encryptKey.js created, same structure of file
+        in main, create wallet with pvt key first
+        `  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY); `
+        ` const encryptedJsonKey = await wallet.encrypt(
+            process.env.PRIVATE_KEY_PASSWORD,
+            process.env.PRIVATE_KEY
+        ); `
+        //we put the password in .env file too
+        new file storing the encryptedJsonKey
+        ` fs.writeFileSync("./.encryptedKey.json", encryptedJsonKey); `
+    - now to get wallet
+        ` const encryptedJson = fs.readFileSync("./.encryptedKey.json", "utf8");
+            let wallet = new ethers.Wallet.fromEncryptedJsonSync( //used let instead of const cause now have to connect to provider, before it was automatic
+                encryptedJson,
+                process.env.PRIVATE_KEY_PASSWORD
+            ); 
+              wallet = await wallet.connect(provider);
+        `
+        make sure to declare PRIVATE_KEY_PASSWORD in terminal
+            PRIVATE_KEY_PASSWORD-password deploy node.js
+    - ` history ` kets you see terminal history

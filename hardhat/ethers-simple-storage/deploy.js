@@ -8,19 +8,29 @@ async function main() {
   const provider = new ethers.providers.JsonRpcProvider(
     process.env.RPC_URL //get the chain
   );
+
   const wallet = new ethers.Wallet(
     process.env.PRIVATE_KEY, //get the wallet
     provider
   );
+  // const encryptedJson = fs.readFileSync("./.encryptedKey.json", "utf8");
+  // let wallet = new ethers.Wallet.fromEncryptedJsonSync( //used elt instead of const cause now have to connect to provider, before it was automatic
+  //   encryptedJson,
+  //   process.env.PRIVATE_KEY_PASSWORD
+  // );
+  // wallet = await wallet.connect(provider);
+
   const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8"); //get abi
   const binary = fs.readFileSync(
     "./SimpleStorage_sol_SimpleStorage.bin", //get binary
     "utf8"
   );
+
   const contractFactory = new ethers.ContractFactory(abi, binary, wallet); //create contractfac pbject connected to wallet using abi and bin
   console.log("Deploying please wait ...");
   const contract = await contractFactory.deploy(); //DEPLOYING THE CONTRACT
   await contract.deployTransaction.wait(1); //wait for dep contract to come on block
+
   // console.log(contract.deployTransaction);
   // console.log(transactionReceipt);
   // console.log("deplying with only transaction data!");
