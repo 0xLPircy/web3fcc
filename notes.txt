@@ -312,6 +312,7 @@ VERIFYING ON BLOCK EXPLORERS
 
 
 6 HARDHAT SIMPLE STORAGE
+harhat can be used as and instead of vs code?
 
 6.00
     - hardhat is a Dev environment
