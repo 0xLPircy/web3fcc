@@ -293,3 +293,10 @@ CUSTOM PRETTIER
     - .prettierrc file created with custom shiz
     - this takes precedent over other files
     - other: cmd shift v for priview mode of .md files
+
+5.19
+DEPLOYING TO A TESTNET OR MAINNET
+    - Alchemy makes us a node to use on a test net
+    - we use the http endpoint given there
+    - adding our pvt key from sepolia test net wala test account
+    - after deploying we can search the contract address on sepolia to see it yayyyy
