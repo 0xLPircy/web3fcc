@@ -308,3 +308,13 @@ VERIFYING ON BLOCK EXPLORERS
     - enter details relevant to your contract
     - copy paste your contract code
     - mempool is waiting room on alchemy
+
+
+
+6 HARDHAT SIMPLE STORAGE
+
+6.00
+    - hardhat is a Dev environment
+    - everything you can do in hardhat is called a task
+    - can package them into plugins that can be imported to another project
+    - hardhat has many range plugins ex: web3.js ethers.js
