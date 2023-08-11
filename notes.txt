@@ -300,3 +300,11 @@ DEPLOYING TO A TESTNET OR MAINNET
     - we use the http endpoint given there
     - adding our pvt key from sepolia test net wala test account
     - after deploying we can search the contract address on sepolia to see it yayyyy
+
+5.20
+VERIFYING ON BLOCK EXPLORERS
+    - on etherscan we can verify and public our code
+    - decompiling fromt he button takes time
+    - enter details relevant to your contract
+    - copy paste your contract code
+    - mempool is waiting room on alchemy
