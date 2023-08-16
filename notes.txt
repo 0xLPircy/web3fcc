@@ -349,3 +349,11 @@ HARDHAT SETUP TROUBLE SHOOTING
 
 6.02
 HARDHAT SET UP CONTINUED
+    - What are some things we can do with hardhat
+        * hardhat account (?)
+        * yarn hardhat compile, compile normally
+            1. cache folder, quick way to access sol files
+            2. artifacts folder, contains info about our compiled code
+                build info, info about compiled contract
+                contracts, more compiled info
+        
