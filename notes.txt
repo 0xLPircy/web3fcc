@@ -326,3 +326,18 @@ harhat can be used as and instead of vs code?
     - Create: ` yarn init `
         ` yarn --dev hardhart `
         ` yarn hardhat `
+    - some npm packages have an @ sign at start,
+        these are called "scoped packages"
+        helps organizations amke clear which packages are official and whoch are not
+        eg: everything by @ensdomains is by ens domains
+            anything by @nomiclabs is by hard hat etc
+    - what is in the pre installed structure?
+        * contracts folder with a basic contract "Lock.sol"
+        * node_modules
+        * scripts folder with all deploying intracting with contracts scripts here
+        * test folder
+        * .gitignore
+        * harhat.config.js , entry point for all scripts we write
+        * package.json
+        * readme
+        * yarn.json
