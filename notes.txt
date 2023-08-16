@@ -341,3 +341,11 @@ harhat can be used as and instead of vs code?
         * package.json
         * readme
         * yarn.json
+
+6.01
+HARDHAT SETUP TROUBLE SHOOTING
+    - if there is ahrdhat.config.js in a higher level folder yarn hardhat will give commands and not setup
+    - to find this file ` npx hardhat --verbose ` will tell where it is then you can delete it
+
+6.02
+HARDHAT SET UP CONTINUED
