@@ -319,3 +319,10 @@ harhat can be used as and instead of vs code?
     - everything you can do in hardhat is called a task
     - can package them into plugins that can be imported to another project
     - hardhat has many range plugins ex: web3.js ethers.js
+    - we prefer using
+        ` yarn --dev hardhart `
+        as dependencies are required to run your project while devdependencies are only required to develop
+    - when we reach front end then well install more packages but odnt need on dev stage
+    - Create: ` yarn init `
+        ` yarn --dev hardhart `
+        ` yarn hardhat `
