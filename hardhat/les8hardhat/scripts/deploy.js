@@ -1,5 +1,5 @@
 // imports
-const { ethers } = require("hardhat")
+const { ethers, run, network } = require("hardhat")
 
 // async main func
 async function main() {
@@ -8,6 +8,30 @@ async function main() {
   const simpleStorage = await SimpleStorageFactory.deploy();
   // await simpleStorage.deployed();
   console.log(`Deployed Contract to ${simpleStorage.target}`)
+  // checking live network or not
+  if (network.config.chainId === 11155111){
+    await simpleStorage.deploymentTransaction().wait(6);
+    console.log("6 blocks verified")
+    await verify(simpleStorage.target, []);
+  }
+}
+
+async function verify(contractAddress, args) {
+  // works for etherscan only
+  console.log("Verifying...")
+  try{
+  await run("verify:verify", {
+    // subtask args
+    address: contractAddress,
+    constructorArguments: args,
+  })
+  } catch (e){
+    if (e.message.toLowerCase().includes("already verified")){
+      console.log("Already Verified");
+    } else {
+      console.log(e);
+    }
+  }
 }
 
 // main

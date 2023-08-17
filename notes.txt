@@ -396,3 +396,29 @@ NETWORKS IN HARDHAT
 [NOTE: make sure to yarn add --dev dotenv when using env file
         and manually require("dotenv").config() in your hardhat.config]
 
+6.05
+PROGRAMMATIC VERIFICATION
+    - we can add code in deploy script to automatically verify 
+    - verify function has a contract address and args, args is for if contract has constructor
+    - we can use etherscan tutorial but hardhat is better
+    - hardhat has many nomic labs made plugins, well use the @nomiclabs/hardhat-etherscan plugin
+    - installed using ` yarn add --dev @nomiclabs/hardhat-etherscan `
+    - need api key to use, whicvh is like a key allowing to use etherscan ka api
+    - add it in the hardhat.config file
+    - new version has the verify plugin for etherscan built in the toolbox, no need for apiu key and plugin
+    - `async function verify(contractAddress, args) {
+        // works for etherscan only
+        console.log("Verifying...")
+        await run("verify:verify", {
+            // subtask args
+            address: contractAddress,
+            constructorArguments: args,
+        })
+    } `
+    - most common error is the contract is already verified so we put a check for that
+    - a hardhat network contract doesnt need to be verified cause local to our machine
+    - so we check to see if live network by importing network and chdecking chainID
+        if yes then we put the verify function
+    - we also wait a couple of blocks to be added tot the chain before verifying
+
+[NOTE: can se network info by clging network.config]
