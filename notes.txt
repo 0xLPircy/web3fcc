@@ -356,4 +356,19 @@ HARDHAT SET UP CONTINUED
             2. artifacts folder, contains info about our compiled code
                 build info, info about compiled contract
                 contracts, more compiled info
-        
+
+6.03
+DEPLOYING SIMPLESTORAGE FROM HARDHAT
+    - sol compiler version can be changed in hardhat.config.js
+    - to compile we run ` yarn hardhat compile `
+    - hardhat has its own ethers that we can use
+    - hardhat ka ethers has contract and the deployment info, normal ethers doesnt
+    - ` async function main() {
+            const SimpleStorageFactory = await ethers.getContractFactory("SimpleStorage");
+            console.log("Deploying contract...");
+            const simpleStorage = await SimpleStorageFactory.deploy();
+            // await simpleStorage.deployed();
+            console.log(`Deployed Contract to ${simpleStorage.target}`)
+        }           
+    `
+    - old versionwe await for deployed but new version we dont await we just type target instead of address for the address of the deployed contract
