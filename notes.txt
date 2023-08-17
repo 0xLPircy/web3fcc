@@ -371,4 +371,28 @@ DEPLOYING SIMPLESTORAGE FROM HARDHAT
             console.log(`Deployed Contract to ${simpleStorage.target}`)
         }           
     `
-    - old versionwe await for deployed but new version we dont await we just type target instead of address for the address of the deployed contract
+    - old version we await for deployed but new version we dont await we just type target instead of address for the address of the deployed contract
+
+6.04
+NETWORKS IN HARDHAT
+    - there is a fake hardhat network
+    - whenever we do a command we use this fake hardhat network
+    - this comes with a private key, rpc url and fake blockchain
+    - we can explicitly default network using hardhat.config.js
+    - using ` defaultNetwork: "hardhat" `
+    - can explicitly say which network using cli too
+        `yarn hardhat run scripts/deploy.js --network hardhat `
+    - makes it easy to change chains and networks fast
+    - we can add network by hardhart.config.js by telling exactly how to connect to sepolia 
+        ` networks: {
+                sepolia:{
+                    url: SEPOLIA_RPC_URL,
+                    accounts: [PRIVATE_KEY], 
+                    chainId: 11155111
+                },
+        } `
+        * create env file and add link to the alchemy project https wala and your pvt key, can add chainid too
+
+[NOTE: make sure to yarn add --dev dotenv when using env file
+        and manually require("dotenv").config() in your hardhat.config]
+
