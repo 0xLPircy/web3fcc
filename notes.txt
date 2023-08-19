@@ -422,3 +422,7 @@ PROGRAMMATIC VERIFICATION
     - we also wait a couple of blocks to be added tot the chain before verifying
 
 [NOTE: can se network info by clging network.config]
+
+6.06
+INTERACTING WITH CONTRACTS IN HARDHAT
+    - same code as before in deploy js
