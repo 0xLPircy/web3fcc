@@ -426,3 +426,9 @@ PROGRAMMATIC VERIFICATION
 6.06
 INTERACTING WITH CONTRACTS IN HARDHAT
     - same code as before in deploy js
+
+6.07
+ARTIFACTS TROUBLESHOOTING
+    - error shows no such file or directory, meaning code didnt compile correctly
+    - we delete the artifacts and cache folder
+    - then we rerun so hardhat wil auto compile if no artifacts
