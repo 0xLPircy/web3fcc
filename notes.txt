@@ -432,3 +432,22 @@ ARTIFACTS TROUBLESHOOTING
     - error shows no such file or directory, meaning code didnt compile correctly
     - we delete the artifacts and cache folder
     - then we rerun so hardhat wil auto compile if no artifacts
+
+6.08
+CUSTOM HARDHAT TASKS
+    - we know hardhat has tasks we saw through yarn hardhat and verify was one of them
+    - we know we can add tasks using plugins
+    - we can also Custom Tasks
+    - can directly define in hardhat.config.js
+    - conventionally folder named tasks
+    - Steps: 
+        * tasks folder -> task-name.js
+        * import the task function
+        * define task name and description
+        * can then pass params and action defines what the task wil actually do 
+        * we pass args and hre, 
+            HRE- hardhat runtime environment, hre can access what hardhat can
+            hence hre.ethers
+        * add file to config by require
+        * (make sure the task fiel is exporting)
+    - scripts and tasks are pretty similar, both can iteract, deploy

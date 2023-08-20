@@ -1,13 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 // require("@nomiclabs/hardhat-etherscan");
-
-task("accounts", "Prints a list of accounts", async (taskArgs, hre) => {
-    const accounts = await hre.ethers.getSigners();
-    for (const account of accounts) {
-        console.log(account.address);
-    }
-});
+require("./tasks/block-number");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
