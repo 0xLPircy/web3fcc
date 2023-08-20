@@ -451,3 +451,11 @@ CUSTOM HARDHAT TASKS
         * add file to config by require
         * (make sure the task fiel is exporting)
     - scripts and tasks are pretty similar, both can iteract, deploy
+
+6.09
+HARDHAT LOCALHOST NODE
+    - everytime we run on hardhat network it re starts that why block number 0, hence we cant really interact
+    - by doing ` yarn hardhat node` we can spinup a node thats work like ganache but in out terminal
+    - this loacally created is using hardhat environment but not the same as hardhat network
+    - we interact with this new network by creating in config, localhost, same chainid as hardhat
+    - dont need to add acounts cause automatically gave us 10 fake accounts
