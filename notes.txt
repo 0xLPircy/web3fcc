@@ -459,3 +459,20 @@ HARDHAT LOCALHOST NODE
     - this loacally created is using hardhat environment but not the same as hardhat network
     - we interact with this new network by creating in config, localhost, same chainid as hardhat
     - dont need to add acounts cause automatically gave us 10 fake accounts
+
+6.10
+HARDHAT CONSOLE
+    - hardhat has a javascript console to interact with things
+        `yard hardhat console --network localhost `
+    - we can do everything we wanna do in deployjs here 
+
+6.11
+RUNNING TESTS
+    - we can delete artifacts and cache by running ` yarn hardhat clean ` too
+    - rekt.news shows prev contracts that got hacked and how
+    - hardhat testing works with the mocha framework
+    - test -> test-deploy.js
+    - describe function takes string as name and a function
+    - before each tells us what we'll do before each it
+    - describes can be nested
+    p deploy in a before each first 
