@@ -475,4 +475,12 @@ RUNNING TESTS
     - describe function takes string as name and a function
     - before each tells us what we'll do before each it
     - describes can be nested
-    p deploy in a before each first 
+    - deploy in a beforeeach first 
+    - the it takes a string definign whats hould happen and a fucntion carrying it out
+    - assert and expect from a package preinstalled called chai
+    - eg for assert ` assert.equal(currentValue.toString(), expectedValue); `
+        eg for expect `  expect(currentValue.toString().to.equal(expectedValue)); `
+
+    - can run one out of 100 tests by using
+        `yarn hardhat text --grep keywordofstring `
+
