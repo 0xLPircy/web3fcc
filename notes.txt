@@ -484,3 +484,7 @@ RUNNING TESTS
     - can run one out of 100 tests by using
         `yarn hardhat text --grep keywordofstring `
 
+6.12
+HARDHAT GAS REPORTER
+    - best plugin extentiomn ius hardhat-gas-reporter
+    - intall with ` yarn hardhat-gas-reporter --dev `
