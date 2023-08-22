@@ -488,3 +488,22 @@ RUNNING TESTS
 HARDHAT GAS REPORTER
     - best plugin extentiomn ius hardhat-gas-reporter
     - intall with ` yarn hardhat-gas-reporter --dev `
+    - we add require in config file
+    - we add     
+        ` gasReporter: {
+            enabled: true,
+        }, `
+    in the module.exports of config
+    - now running test will poutput it to terminal
+    - BUT we add
+        `
+        outputFile: "gas-reports.txt",
+        noColors: true,
+        currency: "USD",
+        coinmarketcap: COINMARKETCAP_API_KEY,
+        `
+    - enables output in a text file, and converts to usd we use coinmarketcap api to convert to usd
+    - we can also choose which chain to deploy to by specifying
+        ` token: "MATIC" `
+
+    - other: we add an or to where out env vars are called in the config file so it isnt undefined ever and throw an error
