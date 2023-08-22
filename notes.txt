@@ -507,3 +507,12 @@ HARDHAT GAS REPORTER
         ` token: "MATIC" `
 
     - other: we add an or to where out env vars are called in the config file so it isnt undefined ever and throw an error
+
+6.13
+SOLIDITY COVERAGE
+    - solidity coverage is a tool for ensuring safety of contract 
+    - checks how many lines of code arent covered by tests
+    - we install by 
+        ` yarn add --dev solidity-coverage `
+    - add require file and run yarn hardhat coverage
+    - creates a coverage folder with lots of info and a file giving the info
