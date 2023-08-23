@@ -516,3 +516,8 @@ SOLIDITY COVERAGE
         ` yarn add --dev solidity-coverage `
     - add require file and run yarn hardhat coverage
     - creates a coverage folder with lots of info and a file giving the info
+
+6.14
+WAFFLE
+    - its a tool for smar contract testing
+    - now we get a toolbox pre installed but not a waffle
