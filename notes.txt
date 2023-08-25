@@ -534,3 +534,9 @@ HARDHAT SETUP
     - then run ` yarn hardhat `
     - used to have the advance project template, doesnt now
     - eslint is used to test code 
+
+7.02
+LINT
+    - eslint for javascript
+    - solhint for solidity
+    - REDO LATER
