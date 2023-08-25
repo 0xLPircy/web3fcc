@@ -540,3 +540,6 @@ LINT
     - eslint for javascript
     - solhint for solidity
     - REDO LATER
+
+7.03
+SETUP CONTI
