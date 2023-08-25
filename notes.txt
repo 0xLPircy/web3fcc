@@ -521,3 +521,16 @@ SOLIDITY COVERAGE
 WAFFLE
     - its a tool for smar contract testing
     - now we get a toolbox pre installed but not a waffle
+
+
+7.00
+HARDHAT FUND ME
+    - about git etc
+
+7.01
+HARDHAT SETUP
+    - new folder
+    - add `yarn add --dev hardhat `
+    - then run ` yarn hardhat `
+    - used to have the advance project template, doesnt now
+    - eslint is used to test code 
