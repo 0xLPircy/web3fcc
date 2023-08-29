@@ -543,3 +543,9 @@ LINT
 
 7.03
 SETUP CONTI
+    - added contracts from the remix files
+
+
+7.04
+IMPORT FROM npm
+    - add chainlink using ` yarn add --dev @chailink/contracts `
