@@ -549,3 +549,30 @@ SETUP CONTI
 7.04
 IMPORT FROM npm
     - add chainlink using ` yarn add --dev @chailink/contracts `
+
+7.05
+HARDHAT DEPLOY
+     - hardhat deploy is a package for easy deployments and testing
+     - added ` yarn add --dev hardhat-deploy `
+     - add require statement
+     - delete deploy.js and create new folder deploy
+     - now, we override hardhat-ethers with hardhat-deploy-ethers
+     - last time we overrided hardhat with hardhat-ethers
+     - ` yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers `
+     - enables ethers to keep track of all deployments we make 
+     - all scripts that we add to deploy folder get run when we run hardhat deploy
+     - best practice to number in name, so run in an order 
+        eg: 01-deploy-fund-me.js
+    - we dont need main function cause deploy will call default function we define there 
+    - hre = hardhart runtime environment, hardhat automatically calls thius when running the fucntion as params
+    - we use ` deployments ` to get 2 functions `deploy` and `log`
+    - we use `getNamedAccounts` to get `deployer`
+    - namedAccounts helps differ between accounts (?)
+    -   namedAccounts:{
+            deployer:{
+                default: 0,
+            }
+        }
+        here we can specify which account will be deployer, here its specified 0,
+        for another chain we can do ` 31337: 1 `
+        thats chain id and which account position
