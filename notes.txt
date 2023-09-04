@@ -587,3 +587,11 @@ MOCKING and HELPER-HARDHAT-CONFIG
         (these datafeeds/addresses for different chains can be found on docs.chain.link)
     - basically passing the contract priceFeed as a param everywhere instead of calling it inget price
     - so we call PriceConverter with pricefeed as param which in turn calls getPrice with pricefeed as param. YAYYYY
+    - now to deploy:
+    - we dont use a deploy factory like before but we just use the deploy for hardhat that we defined in 01-deploy-fund-me.js
+    - now we try that if chain id is x use y pricefeed address
+        we use "aave" protocol, they have a network config which basically does this, takes chain id and based on that diff vars
+    - we create a helper-hardhat-config.js whoch we call different network ki chain id se pricefeed, using https://docs.chain.link/data-feeds/price-feeds/
+    - then we import that in out 01-deploy-fund-me.js
+    - then we add `   const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]; `
+        so when we type ` yarn hardhat deploy --network polygon ` we get polygon and similarly other names

@@ -16,8 +16,23 @@
 //   //   we dont use the above we just extrapolate directly as params
 // };
 
+const { networkConfig } = require("../helper-hardhat-config");
+// OR
+// const helperConfig = require("../helper-hardhat-config");
+// const networkConfig = helperConfig.networkConfig;
+
 module.exports = async ({ getNamedAccounts, deployments }) => {
   const { deploy, log } = deployments;
   const { deployer } = await getNamedAccounts();
   const chainId = network.config.chainId;
+
+  // if chain id x use y etc
+  const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"];
+
+  // mock
+  const fundMe = await deploy("FundMe", {
+    from: deployer, //from who
+    args: [], //any args for the constructor ie price feed address here
+    log: true, //custom logging (?)
+  }); //name of contract, overrides as parans in deploy
 };
