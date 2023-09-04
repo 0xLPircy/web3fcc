@@ -576,3 +576,14 @@ HARDHAT DEPLOY
         here we can specify which account will be deployer, here its specified 0,
         for another chain we can do ` 31337: 1 `
         thats chain id and which account position
+
+7.06
+MOCKING and HELPER-HARDHAT-CONFIG
+    - how to deploy to local cause testnet har baar karna is time consuming
+    - can run on hardhat but thatll be destroyed after every run, making it impossibl to deal with multiple thingsin our contract at once
+    - we use MOCKING basically simulating real contract
+    - what if we wanna change chains? so we but the aggregator contract address in a param, so changing chains is easy
+    - so we pass pricefeed (how we were getting conversion rate) as param in constructor of fundme.sol
+        (these datafeeds/addresses for different chains can be found on docs.chain.link)
+    - basically passing the contract priceFeed as a param everywhere instead of calling it inget price
+    - so we call PriceConverter with pricefeed as param which in turn calls getPrice with pricefeed as param. YAYYYY

@@ -23,14 +23,18 @@ contract FundMe {
     // setting up owner of contract
     address public immutable i_owner;
     // 822426 -> 798955
-    constructor(){
+
+    AggregatorV3Interface public priceFeed;
+
+    constructor(address priceFeedAddress){
         i_owner = msg.sender;
+        priceFeed = AggregatorV3Interface(priceFeedAddress);
     }
 
     function fund() public payable {
         
         // set minimum fund amount in usd
-        require(msg.value.getConversionRate() >= minimumUsd, "didnt send enough"); //1e18 == 10^18 == 1000000000000000000
+        require(msg.value.getConversionRate(priceFeed) >= minimumUsd, "didnt send enough"); //1e18 == 10^18 == 1000000000000000000
         // msg.value is how much they sent with the function in terms of etherium
         // msg.value is 18 decimal places cause wei
         // so gives 1000000000000000000 wei meaning 1 ether
