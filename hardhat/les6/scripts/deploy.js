@@ -4,10 +4,10 @@ const { ethers, run, network } = require("hardhat");
 // async main func
 async function main() {
     const SimpleStorageFactory =
-        await ethers.getContractFactory("SimpleStorage");
+        await ethers.getContractFactory("SimpleStorage"); //get the contract named SimpleStorage
     console.log("Deploying contract...");
-    const simpleStorage = await SimpleStorageFactory.deploy();
-    // await simpleStorage.deployed();
+    const simpleStorage = await SimpleStorageFactory.deploy(); //simpleStorage is the deployment of the contract
+    // await simpleStorage.deployed(); //old version we waited, new we dont
     console.log(`Deployed Contract to ${simpleStorage.target}`);
     // checking live network or not
     if (network.config.chainId === 11155111) {

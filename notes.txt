@@ -183,7 +183,7 @@ COMPILING OUR SOLIDITY
 
 5.10
 GANACHE and NETWORKS
-    -rps : pemote procedure call
+    -rps : remote procedure call
         connects us to make api calls and interact with blockchain node
     
 5.11
