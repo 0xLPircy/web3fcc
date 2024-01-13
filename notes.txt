@@ -593,5 +593,5 @@ MOCKING and HELPER-HARDHAT-CONFIG
         we use "aave" protocol, they have a network config which basically does this, takes chain id and based on that diff vars
     - we create a helper-hardhat-config.js whoch we call different network ki chain id se pricefeed, using https://docs.chain.link/data-feeds/price-feeds/
     - then we import that in out 01-deploy-fund-me.js
-    - then we add `   const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]; `
+    - then we add `  const ethUsdPriceFeedAddress = networkConfig[chainId]["ethUsdPriceFeed"]; `
         so when we type ` yarn hardhat deploy --network polygon ` we get polygon and similarly other names
