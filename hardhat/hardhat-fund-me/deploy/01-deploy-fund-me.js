@@ -17,6 +17,7 @@
 // };
 
 const { networkConfig } = require("../helper-hardhat-config");
+const { network } = require("hardhat");
 // OR
 // const helperConfig = require("../helper-hardhat-config");
 // const networkConfig = helperConfig.networkConfig;
